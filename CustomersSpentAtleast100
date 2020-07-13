@@ -1,6 +1,6 @@
 ;WITH CTE_CutomerOrders AS
 (
-    SELECT C.customer_Id,C.name,MONTH(O.Order_Date),SUM(O.Quantity * P.Price) AS AmountSpent
+    SELECT C.customer_Id,C.name,SUM(O.Quantity * P.Price) AS AmountSpent
     FROM Customers C
     LEFT JOIN Orders O
         on C.customer_Id= O.customer_Id
